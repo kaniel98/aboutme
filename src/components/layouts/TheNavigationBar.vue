@@ -3,8 +3,8 @@
         <div class="container-xxl">
             <a href="#intro" class="navbar-brand">
                 <i class="bi bi-truck-front me-2"></i>
-                <!-- The <span> HTML element is a generic inline container for phrasing content, which does not inherently represent anything. -->
-                <span class="fw-bold white-text">Kaniel Koh Wei Zhe</span>
+                <!-- The <span> HTML element is a generic inline container for phrasing content, :key="contact.username"which does not inherently represent anything. -->
+                <span class="fw-bold white-text">Kaniel Koh</span>
             </a>
             <!-- Toggle button for mobile navigation -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle-navigation">
