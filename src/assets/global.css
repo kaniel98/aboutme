@@ -19,3 +19,7 @@ html {
 div.black-bg {
     background-color: rgba(32, 32, 32, 1);
 }
+
+section {
+    margin-top: 70px;
+}

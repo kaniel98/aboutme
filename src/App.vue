@@ -1,11 +1,16 @@
 <template>
     <div class="App">
-        <navigation-bar></navigation-bar>
-        <section id="introduction">
-            <introduction-header></introduction-header>
-            <about-me></about-me>
-        </section>
-        <language-buttons></language-buttons>
+        <div class="black-bg">
+            <navigation-bar></navigation-bar>
+            <section id="introduction">
+                <introduction-header></introduction-header>
+                <about-me></about-me>
+            </section>
+
+            <section id="skills">
+                <technical-skills></technical-skills>
+            </section>
+        </div>
     </div>
 </template>
 
@@ -14,7 +19,7 @@ import { defineComponent } from 'vue';
 import NavigationBar from './components/layouts/TheNavigationBar.vue';
 import IntroductionHeader from './components/Introduction.vue';
 import AboutMe from './components/AboutMe.vue';
-import LanguageButtons from './components/layouts/LanguageButtons.vue';
+import TechnicalSkills from './components/TechnicalSkills.vue';
 
 export default defineComponent({
     name: 'App',
@@ -22,7 +27,7 @@ export default defineComponent({
         'navigation-bar': NavigationBar,
         'introduction-header': IntroductionHeader,
         'about-me': AboutMe,
-        'language-buttons': LanguageButtons,
+        'technical-skills': TechnicalSkills,
     },
 });
 </script>
