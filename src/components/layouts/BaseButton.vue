@@ -19,9 +19,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 export default defineComponent({
-    name: 'BaseButton',
+    name: "BaseButton",
     props: {
         text: {
             required: true,
@@ -47,10 +47,10 @@ export default defineComponent({
         },
 
         buttonClass() {
-            if (this.buttonType === 'emailButton') {
-                return 'btn button-grey text-white rounded-1 email-button';
+            if (this.buttonType === "emailButton") {
+                return "btn button-grey text-white rounded-1 email-button";
             }
-            return 'btn button-grey text-white rounded-1 language-button';
+            return "btn button-grey col-4 text-white rounded-1 language-button";
         },
     },
 });
@@ -70,7 +70,6 @@ a {
     font-weight: semi-bold;
     width: 400px;
     height: 64px;
-    margin-top: 30px;
 }
 
 .language-button {
@@ -78,5 +77,7 @@ a {
     font-weight: semi-bold;
     width: 192px;
     height: 64px;
+    margin-right: 60px;
+    margin-bottom: 24px;
 }
 </style>

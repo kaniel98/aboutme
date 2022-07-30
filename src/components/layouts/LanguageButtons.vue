@@ -1,24 +1,22 @@
 <template>
-    <div class="black-bg">
-        <base-button buttonType="random" v-for="language in languages" :key="language.language" :text="language.language"></base-button>
-    </div>
+    <base-button buttonType="languageButton" v-for="language in languages" :key="language.language" :text="language.language"></base-button>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
-import BaseButton from './BaseButton.vue';
-import Language from '../../types/Languages';
+import { defineComponent, ref } from "vue";
+import BaseButton from "./BaseButton.vue";
+import Language from "../../types/Languages";
 
 export default defineComponent({
     setup() {
         const languages = ref<Language[]>([
-            { language: 'Python' },
-            { language: 'JavaScript' },
-            { language: 'TypeScript' },
-            { language: 'GoLang' },
-            { language: 'MySQL' },
-            { language: 'CSS' },
-            { language: 'HTML' },
+            { language: "Python" },
+            { language: "JavaScript" },
+            { language: "TypeScript" },
+            { language: "GoLang" },
+            { language: "MySQL" },
+            { language: "CSS" },
+            { language: "HTML" },
         ]);
 
         return {
@@ -27,15 +25,10 @@ export default defineComponent({
     },
 
     components: {
-        'base-button': BaseButton,
+        "base-button": BaseButton,
     },
-    name: 'LanguageButtons',
+    name: "LanguageButtons",
 });
 </script>
 
-<style scoped>
-base-button {
-    width: 64px
-}
-
-</style>
+<style scoped></style>

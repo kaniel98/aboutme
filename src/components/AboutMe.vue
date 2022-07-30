@@ -1,8 +1,8 @@
 <template>
-    <div class="px-4 black-bg" style="padding-top: 130px">
+    <div class="px-4 black-bg" style="margin-top: 70px">
         <div class="container-xxl">
             <div class="row">
-                <div class="col-md-7 text-center text-md-start">
+                <div class="col text-center text-md-start">
                     <mini-header :headerText="headerText"></mini-header>
                     <div class="mini-header-body white-text">{{ headerBody }}</div>
                 </div>

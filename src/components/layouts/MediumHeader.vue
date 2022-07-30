@@ -20,9 +20,10 @@ export default defineComponent({
 
 <style scoped>
 .medium-header {
-    font-weight: bold;
-    color: rgba(222, 222, 222, 1);
+    font-weight: semi-bold;
+    color: rgba(222, 222, 222, 0.7);
     font-size: 24px;
     letter-spacing: 1.5px;
+    margin-bottom: 25px;
 }
 </style>

@@ -3,8 +3,7 @@
         <div class="container-xxl">
             <a href="#intro" class="navbar-brand">
                 <i class="bi bi-truck-front me-2"></i>
-                <!-- The <span> HTML element is a generic inline container for phrasing content, :key="contact.username"which does not inherently represent anything. -->
-                <span class="fw-bold white-text">Kaniel Koh</span>
+                <span class="fw-bold white-text">{{ name }}</span>
             </a>
             <!-- Toggle button for mobile navigation -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle-navigation">
@@ -30,8 +29,23 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, reactive, toRefs } from "vue";
 export default defineComponent({
+    setup() {
+        const state = reactive({
+            name: "Kaniel Koh",
+        });
+
+        return { ...toRefs(state) };
+    },
+
     name: "NavigationBar",
 });
 </script>
+
+<style scoped>
+.grey-bg {
+    background-color: rgba(50, 50, 50, 0.7);
+    backdrop-filter: blur(10px);
+}
+</style>

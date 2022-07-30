@@ -20,9 +20,10 @@ export default defineComponent({
 
 <style scoped>
 .mini-header {
-    font-weight: bold;
-    color: rgba(222, 222, 222, 0.62);
+    font-weight: semi-bold;
+    color: rgba(222, 222, 222, 0.7);
     font-size: 16px;
     letter-spacing: 1.5px;
+    margin-bottom: 12px;
 }
 </style>

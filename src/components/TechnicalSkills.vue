@@ -1,33 +1,42 @@
 <template>
     <div class="black-bg px-4">
         <div class="container-xxl">
-            <medium-header :headerText="mediumHeader"></medium-header>
-            <mini-header :headerText="languages"></mini-header>
-            <language-buttons></language-buttons>
+            <div class="row justify-content-center align-items-center">
+                <div class="col text-center text-md-start">
+                    <medium-header :headerText="mediumHeader"></medium-header>
+                    <!-- For languages -->
+                    <mini-header :headerText="languages"></mini-header>
+                    <language-buttons></language-buttons>
+                    <mini-header :headerText="frameworks" style="margin-top:5px"></mini-header>
+                    <framework-buttons></framework-buttons>
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from 'vue';
-import LanguageButtons from './layouts/LanguageButtons.vue';
-import MediumHeader from './layouts/MediumHeader.vue';
-import MiniHeader from './layouts/MiniHeader.vue';
+import { defineComponent, reactive, toRefs } from "vue";
+import LanguageButtons from "./layouts/LanguageButtons.vue";
+import FrameworkButtons from "./layouts/FrameworkButtons.vue";
+import MediumHeader from "./layouts/MediumHeader.vue";
+import MiniHeader from "./layouts/MiniHeader.vue";
 
 export default defineComponent({
     setup() {
         const state = reactive({
-            mediumHeader: 'TECHNICAL SKILLS',
-            languages: 'LANGUAGES',
-            frameworks: 'FRAMEWORKS',
+            mediumHeader: "TECHNICAL SKILLS:",
+            languages: "LANGUAGES:",
+            frameworks: "FRAMEWORKS:",
         });
         return { ...toRefs(state) };
     },
-    name: 'TechnicalSkills',
+    name: "TechnicalSkills",
     components: {
-        'language-buttons': LanguageButtons,
-        'medium-header': MediumHeader,
-        'mini-header': MiniHeader,
+        "language-buttons": LanguageButtons,
+        "framework-buttons": FrameworkButtons,
+        "medium-header": MediumHeader,
+        "mini-header": MiniHeader,
     },
 });
 </script>
