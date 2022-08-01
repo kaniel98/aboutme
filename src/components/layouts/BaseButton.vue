@@ -50,7 +50,7 @@ export default defineComponent({
             if (this.buttonType === "emailButton") {
                 return "btn button-grey text-white rounded-1 email-button";
             }
-            return "btn button-grey col-4 text-white rounded-1 language-button";
+            return "btn button-grey col-4 text-white rounded-1 language-button mx-4";
         },
     },
 });
@@ -59,10 +59,6 @@ export default defineComponent({
 <style scoped>
 .button-grey {
     background-color: rgba(157, 157, 157, 1);
-}
-
-a {
-    all: unset;
 }
 
 .email-button {
@@ -75,9 +71,8 @@ a {
 .language-button {
     font-size: 18px;
     font-weight: semi-bold;
-    width: 192px;
+    width: 180px;
     height: 64px;
-    margin-right: 60px;
     margin-bottom: 24px;
 }
 </style>

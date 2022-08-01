@@ -1,13 +1,23 @@
 <template>
     <div class="black-bg px-4">
         <div class="container-xxl">
-            <div class="row justify-content-center align-items-center">
-                <div class="col text-center text-md-start">
+            <div class="row">
+                <div class="col-12 text-md-start text-center">
                     <medium-header :headerText="mediumHeader"></medium-header>
+                </div>
+                <div class="col-md-2 text-md-start text-center">
                     <!-- For languages -->
                     <mini-header :headerText="languages"></mini-header>
+                </div>
+                <div class="col d-flex justify-content-md-start justify-content-center flex-wrap">
                     <language-buttons></language-buttons>
-                    <mini-header :headerText="frameworks" style="margin-top:5px"></mini-header>
+                </div>
+            </div>
+            <div class="row" style="padding-top: 15px">
+                <div class="col-md-2 text-md-start text-center">
+                    <mini-header :headerText="frameworks"></mini-header>
+                </div>
+                <div class="col d-flex justify-content-md-start justify-content-center flex-wrap">
                     <framework-buttons></framework-buttons>
                 </div>
             </div>
