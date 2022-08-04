@@ -59,7 +59,7 @@ export default defineComponent({
 
 .header-body {
     font-size: 24px;
-    color: rgba(149, 149, 149, 1);
+    color: rgba(222, 222, 222,0.7);
     margin-bottom: 25px;
 }
 </style>

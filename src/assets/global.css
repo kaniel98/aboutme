@@ -23,3 +23,11 @@ section {
 body {
     overscroll-behavior-y: none;
 }
+
+/* Background colours */
+/* Black: rgba(32, 32, 32, 1) */
+/* Grey: rgba(157, 157, 157, 1)  */
+
+/* Text colours */
+/* Text grey: rgba(222, 222, 222, 0.7) for header / text body */
+/* Text white: rgba(222, 222, 222, 1) */

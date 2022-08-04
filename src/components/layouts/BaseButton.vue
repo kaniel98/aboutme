@@ -10,7 +10,7 @@
     </a>
 
     <!-- Use if no link is provided -->
-    <button :class="buttonClass" v-else>
+    <button :class="buttonClass" v-else tabindex="-1">
         <span>
             <slot name="icon"></slot>
             {{ text }}
@@ -48,7 +48,7 @@ export default defineComponent({
 
         buttonClass() {
             if (this.buttonType === "emailButton") {
-                return "btn button-grey text-white rounded-1 email-button";
+                return "btn button-grey text-white rounded-1 email-button ";
             }
             return "btn button-grey col-4 text-white rounded-1 language-button mx-4";
         },

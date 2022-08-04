@@ -1,6 +1,9 @@
 <template>
     <div class="black-bg">
-        <div class="mini-header">{{ headerText }}</div>
+        <div class="mini-header">{{ headerText }}
+
+            <slot name="ExperienceHeader"></slot>
+        </div>
     </div>
 </template>
 
@@ -20,10 +23,10 @@ export default defineComponent({
 
 <style scoped>
 .mini-header {
-    font-weight: semi-bold;
     color: rgba(222, 222, 222, 0.7);
     font-size: 16px;
     letter-spacing: 1.5px;
     margin-bottom: 12px;
+    font-weight: 200;
 }
 </style>
