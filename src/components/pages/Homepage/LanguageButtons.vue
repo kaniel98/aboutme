@@ -4,8 +4,8 @@
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
-import BaseButton from "./BaseButton.vue";
-import Language from "../../types/Languages";
+import BaseButton from "../../layouts/ui/BaseButton.vue";
+import Language from "../../../types/Languages";
 
 export default defineComponent({
     setup() {

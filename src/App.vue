@@ -21,10 +21,10 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import NavigationBar from "./components/layouts/TheNavigationBar.vue";
-import IntroductionHeader from "./components/Introduction.vue";
-import AboutMe from "./components/AboutMe.vue";
-import TechnicalSkills from "./components/TechnicalSkills.vue";
-import MyExperiences from "./components/Experiences.vue";
+import IntroductionHeader from "./components/pages/Homepage/Introduction.vue";
+import AboutMe from "./components/pages/Homepage/AboutMe.vue";
+import TechnicalSkills from "./components/pages/Homepage/TechnicalSkills.vue";
+import MyExperiences from "./components/pages/Homepage/Experiences.vue";
 
 export default defineComponent({
     name: "App",

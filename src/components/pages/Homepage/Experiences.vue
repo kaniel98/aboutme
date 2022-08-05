@@ -27,8 +27,8 @@
 </template>
 
 <script>
-import MediumHeader from "./layouts/MediumHeader.vue";
-import ExperienceContent from "./layouts/ExperienceContent.vue";
+import MediumHeader from "../../ui/MediumHeader.vue";
+import ExperienceContent from "./ExperienceContent.vue";
 
 import { defineComponent, reactive, toRefs } from "vue";
 

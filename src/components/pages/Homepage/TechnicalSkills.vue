@@ -27,10 +27,10 @@
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from "vue";
-import LanguageButtons from "./layouts/LanguageButtons.vue";
-import FrameworkButtons from "./layouts/FrameworkButtons.vue";
-import MediumHeader from "./layouts/MediumHeader.vue";
-import MiniHeader from "./layouts/MiniHeader.vue";
+import LanguageButtons from "./LanguageButtons.vue";
+import FrameworkButtons from "./FrameworkButtons.vue";
+import MediumHeader from "../../ui/MediumHeader.vue";
+import MiniHeader from "../../ui/MiniHeader.vue";
 
 export default defineComponent({
     setup() {

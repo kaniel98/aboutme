@@ -19,7 +19,7 @@
 
                 <div class="col-md-5 text-center">
                     <!-- d-none (Default none), d-md-block (Default medium size - Block) -->
-                    <img class="img-fluid d-none d-md-block rounded-circle" src="../assets/personal_pic.jpeg" alt="placeholder" />
+                    <img class="img-fluid d-none d-md-block rounded-circle" src="../../../assets/personal_pic.jpeg" alt="placeholder" />
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from "vue";
-import BaseButton from "./layouts/BaseButton.vue";
+import BaseButton from "../../layouts/ui/BaseButton.vue";
 
 export default defineComponent({
     setup() {

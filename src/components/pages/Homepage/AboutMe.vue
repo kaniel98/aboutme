@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { defineComponent, toRefs, reactive } from 'vue';
-import MiniHeader from './layouts/MiniHeader.vue';
+import MiniHeader from '../../ui/MiniHeader.vue';
 
 export default defineComponent({
     setup() {

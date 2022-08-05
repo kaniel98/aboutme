@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import MiniHeader from "./MiniHeader.vue";
+import MiniHeader from "../../ui/MiniHeader.vue";
 import { defineComponent, reactive, toRefs } from "vue";
 
 export default defineComponent({
