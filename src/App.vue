@@ -14,6 +14,18 @@
             <section id="experiences">
                 <my-experiences></my-experiences>
             </section>
+
+            <section id="projects">
+                <past-projects></past-projects>
+            </section>
+
+            <section id="contact">
+                <contact-information></contact-information>
+            </section>
+
+            <section id="footer">
+                <the-footer></the-footer>
+            </section>
         </div>
     </div>
 </template>
@@ -25,6 +37,9 @@ import IntroductionHeader from "./components/pages/Homepage/Introduction.vue";
 import AboutMe from "./components/pages/Homepage/AboutMe.vue";
 import TechnicalSkills from "./components/pages/Homepage/TechnicalSkills.vue";
 import MyExperiences from "./components/pages/Homepage/Experiences.vue";
+import ContactInformation from "./components/pages/Homepage/ContactInformation.vue";
+import PastProjects from "./components/pages/Homepage/PastProjects.vue";
+import TheFooter from "./components/layouts/TheFooter.vue";
 
 export default defineComponent({
     name: "App",
@@ -34,6 +49,9 @@ export default defineComponent({
         "about-me": AboutMe,
         "technical-skills": TechnicalSkills,
         "my-experiences": MyExperiences,
+        "the-footer": TheFooter,
+        "contact-information": ContactInformation,
+        "past-projects": PastProjects,
     },
 });
 </script>

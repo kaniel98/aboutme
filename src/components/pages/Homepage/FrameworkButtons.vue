@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
-import BaseButton from "../../layouts/ui/BaseButton.vue";
+import BaseButton from "../../ui/BaseButton.vue";
 import Frameworks from "../../../types/Frameworks";
 
 export default defineComponent({

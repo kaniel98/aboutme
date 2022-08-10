@@ -26,8 +26,8 @@ export default defineComponent({
             timePeriod: "May 2022 - August 2022",
             experienceDetails: [
                 "Focused on backend development with Nest.js & Express.js",
-                "Developed new APIs used in National Gallery Singapore's (NGS) eCommerce Projects",
-                "Maintenance and support of NGS eCommerce Projects",
+                "Developed backend services used in the National Gallery of Singapore's Content Management Systems (CMS) platforms with Express.js, Nest.js and MySQL",
+                "Ad-hoc research for management into new software and APIs ",
                 "Refactoring of codes to reduce code base & increase efficiency",
             ],
         });

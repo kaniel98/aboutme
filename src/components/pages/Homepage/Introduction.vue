@@ -10,11 +10,13 @@
                         {{ headerText }}
                     </div>
 
-                    <base-button buttonType="emailButton" :text="email" :hyperlink="email">
-                        <template v-slot:icon>
-                            <i class="bi bi-envelope pe-2"></i>
-                        </template>
-                    </base-button>
+                    <div class="d-none d-sm-block">
+                        <base-button buttonType="emailButton" :text="email" :hyperlink="email">
+                            <template v-slot:icon>
+                                <i class="bi bi-envelope pe-2"></i>
+                            </template>
+                        </base-button>
+                    </div>
                 </div>
 
                 <div class="col-md-5 text-center">
@@ -28,7 +30,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from "vue";
-import BaseButton from "../../layouts/ui/BaseButton.vue";
+import BaseButton from "../../ui/BaseButton.vue";
 
 export default defineComponent({
     setup() {
@@ -59,7 +61,7 @@ export default defineComponent({
 
 .header-body {
     font-size: 24px;
-    color: rgba(222, 222, 222,0.7);
+    color: rgba(222, 222, 222, 0.7);
     margin-bottom: 25px;
 }
 </style>
