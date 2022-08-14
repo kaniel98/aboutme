@@ -2,7 +2,6 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top grey-bg px-4">
         <div class="container-xxl">
             <a href="#intro" class="navbar-brand">
-                <i class="bi bi-truck-front me-2"></i>
                 <span class="fw-bold white-text">{{ name }}</span>
             </a>
             <!-- Toggle button for mobile navigation -->
@@ -15,7 +14,7 @@
         <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
             <ul class="navbar-nav text-nowrap">
                 <li class="nav-item">
-                    <a href="#about_me" class="nav-link">About me</a>
+                    <a href="#about" class="nav-link">About me</a>
                 </li>
                 <li class="nav-item">
                     <a href="#experiences" class="nav-link">Past experiences</a>

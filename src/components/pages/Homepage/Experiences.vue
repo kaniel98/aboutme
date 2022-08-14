@@ -3,22 +3,31 @@
         <div class="container-xxl">
             <medium-header :headerText="mediumHeader"></medium-header>
             <div class="row">
-                <div class="col-2">
-                    <div class="list-group rounded-0" id="list-tab" role="tablist">
-                        <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#flex-solver" role="tab" aria-controls="list-home">Flex-Solver</a>
-                        <!-- <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile">Profile</a>
-                        <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">Messages</a>
-                        <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">Settings</a> -->
-                    </div>
+                <div class="col-md-3 col-12">
+                    <ul class="nav" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button
+                                class="nav-link me-3 active rounded-0"
+                                id="home-tab"
+                                data-bs-toggle="tab"
+                                data-bs-target="#flex-solver"
+                                type="button"
+                                role="tab"
+                                aria-controls="home"
+                                aria-selected="true"
+                            >
+                                Flex-solver
+                            </button>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-10 white-text">
-                    <div class="tab-content" id="nav-tabContent">
+
+                <!-- Content -->
+                <div class="col-md-9 col-12 white-text">
+                    <div v-for="company in companies" :key="company.id" class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="flex-solver" role="tabpanel" aria-labelledby="list-home-list">
-                            <experience-content></experience-content>
+                            <experience-content :company="company"></experience-content>
                         </div>
-                        <!-- <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
-                        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
-                        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div> -->
                     </div>
                 </div>
             </div>
@@ -26,42 +35,62 @@
     </div>
 </template>
 
-<script>
-import MediumHeader from "../../ui/MediumHeader.vue";
-import ExperienceContent from "./ExperienceContent.vue";
+<script lang="ts">
+import { defineComponent, reactive, toRefs, ref } from "vue";
 
-import { defineComponent, reactive, toRefs } from "vue";
+import MediumHeader from "../../ui/MediumHeader.vue";
+import Company from "../../../types/Companies";
+import ExperienceContent from "./ExperienceContent.vue";
 
 export default defineComponent({
     setup() {
         const state = reactive({
             mediumHeader: "PAST EXPERIENCES:",
         });
-        return { ...toRefs(state) };
+        const companies = ref<Company[]>([
+            {
+                id: 1,
+                title: "BACKEND SOFTWARE DEVELOPER INTERN",
+                name: "FLEX-SOLVER PTE LTD",
+                companyUrl: "https://www.flex-solver.com.sg/",
+                timePeriod: "May 2022 - August 2022",
+                experienceDetails: [
+                    "Focused on backend development with Nest.js & Express.js",
+                    "Developed backend services used in the National Gallery of Singapore's Content Management Systems (CMS) platforms with Express.js, Nest.js and MySQL",
+                    "Ad-hoc research for management into new software and APIs ",
+                    "Refactoring of codes to reduce code base & increase efficiency",
+                ],
+            },
+        ]);
+
+        return { ...toRefs(state), companies };
     },
     components: {
         "medium-header": MediumHeader,
-        "experience-content" : ExperienceContent,
+        "experience-content": ExperienceContent,
     },
     name: "MyExperiences",
 });
 </script>
 
 <style scoped>
-.list-group-item {
+.nav-link {
     background-color: rgba(32, 32, 32, 0.7);
     color: rgba(222, 222, 222, 0.5);
-    border-left: 3px solid rgb(222, 222, 222, 0.3);
+    border: none;
+    /* border-left: 3px solid rgb(222, 222, 222, 0.3); */
+    width: 125px;
 }
 
-.list-group-item:hover {
+.nav-link:hover {
     background-color: rgba(52, 52, 52, 0.7);
     color: rgba(222, 222, 222, 1);
 }
 
-.list-group-item.active {
+.nav-link.active {
     background-color: rgba(52, 52, 52, 0.7);
     border-color: rgba(52, 52, 52, 0.7);
-    border-left: 3px solid rgba(222, 222, 222, 1);
+    color: rgba(222, 222, 222, 1);
+    border-bottom: 3px solid rgba(222, 222, 222, 1);
 }
 </style>

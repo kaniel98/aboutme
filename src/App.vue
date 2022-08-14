@@ -2,7 +2,7 @@
     <div class="App">
         <div class="black-bg">
             <navigation-bar></navigation-bar>
-            <section id="about_me">
+            <section id="about">
                 <introduction-header></introduction-header>
                 <about-me></about-me>
             </section>

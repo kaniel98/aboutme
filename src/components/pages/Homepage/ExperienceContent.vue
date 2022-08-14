@@ -1,37 +1,30 @@
 <template>
-    <div class = "px-3">
-        <mini-header :headerText="miniHeader" style="font-weight: 100; padding-top: 8px">
+    <div>
+        <mini-header :headerText="company.title" style="font-weight: 100; padding-top: 8px">
             <template v-slot:ExperienceHeader>
-                <a :href="companyUrl" target="_blank" rel="noopener noreferrer">@ FLEX-SOLVER PTE LTD</a>
+                <a :href="company.companyUrl" target="_blank" rel="noopener noreferrer">@ {{ company.name }}</a>
             </template>
         </mini-header>
-        <p>{{ timePeriod }}</p>
+        <p>{{ company.timePeriod }}</p>
         <ul>
-            <li v-for="experience in experienceDetails" :key="experience">
+            <li v-for="experience in company.experienceDetails" :key="experience">
                 <span>{{ experience }}</span>
             </li>
         </ul>
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import MiniHeader from "../../ui/MiniHeader.vue";
+import Company from "../../../types/Companies";
 import { defineComponent, reactive, toRefs } from "vue";
 
 export default defineComponent({
-    setup() {
-        const state = reactive({
-            miniHeader: "BACKEND SOFTWARE DEVELOPER INTERN",
-            companyUrl: "https://www.flex-solver.com.sg/",
-            timePeriod: "May 2022 - August 2022",
-            experienceDetails: [
-                "Focused on backend development with Nest.js & Express.js",
-                "Developed backend services used in the National Gallery of Singapore's Content Management Systems (CMS) platforms with Express.js, Nest.js and MySQL",
-                "Ad-hoc research for management into new software and APIs ",
-                "Refactoring of codes to reduce code base & increase efficiency",
-            ],
-        });
-        return { ...toRefs(state) };
+    props: {
+        company: {
+            type: Object as () => Company,
+            required: true,
+        },
     },
     components: {
         "mini-header": MiniHeader,
@@ -59,6 +52,6 @@ p {
 }
 
 li {
-    line-height: 2.0;
+    line-height: 2;
 }
 </style>
