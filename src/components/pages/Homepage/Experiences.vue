@@ -25,7 +25,7 @@
                 <!-- Content -->
                 <div class="col-md-9 col-12 white-text">
                     <div v-for="company in companies" :key="company.id" class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="flex-solver" role="tabpanel" aria-labelledby="list-home-list">
+                        <div :class="'tab-pane fade show ' + activeTab(company.no)" :id="company.id" role="tabpanel" aria-labelledby="list-home-list">
                             <experience-content :company="company"></experience-content>
                         </div>
                     </div>
@@ -49,7 +49,8 @@ export default defineComponent({
         });
         const companies = ref<Company[]>([
             {
-                id: 1,
+                no: 1,
+                id: "flex-solver",
                 title: "BACKEND SOFTWARE DEVELOPER INTERN",
                 name: "FLEX-SOLVER PTE LTD",
                 companyUrl: "https://www.flex-solver.com.sg/",
@@ -63,7 +64,16 @@ export default defineComponent({
             },
         ]);
 
-        return { ...toRefs(state), companies };
+        //Checking if a specific tab is active
+        const activeTab = (tabNo: number) => {
+            console.log(tabNo);
+            if (tabNo === 1) {
+                return "active";
+            }
+            return "";
+        };
+
+        return { ...toRefs(state), companies, activeTab };
     },
     components: {
         "medium-header": MediumHeader,

@@ -17,7 +17,7 @@
 <script lang="ts">
 import MiniHeader from "../../ui/MiniHeader.vue";
 import Company from "../../../types/Companies";
-import { defineComponent, reactive, toRefs } from "vue";
+import { defineComponent } from "vue";
 
 export default defineComponent({
     props: {

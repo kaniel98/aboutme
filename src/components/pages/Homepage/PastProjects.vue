@@ -3,12 +3,12 @@
         <div class="container-xxl">
             <medium-header :headerText="headerText"></medium-header>
             <div class="row">
-                <!-- <div class="col-7">
+                <div class="col-7">
                     <the-carousell :content="content"></the-carousell>
                 </div>
                 <div class="col-5">
                     <carousel-body :content="content"></carousel-body>
-                </div> -->
+                </div>
             </div>
         </div>
     </div>
@@ -16,8 +16,8 @@
 
 <script lang="ts">
 import MediumHeader from "../../ui/MediumHeader.vue";
-// import TheCarousell from "../../ui/TheCarousell.vue";
-// import CarouselBody from "../../ui/CarouselBody.vue";
+import TheCarousell from "../../ui/TheCarousell.vue";
+import CarouselBody from "../../ui/CarouselBody.vue";
 import { defineComponent, reactive, toRefs } from "vue";
 
 export default defineComponent({
@@ -31,8 +31,8 @@ export default defineComponent({
     },
     components: {
         "medium-header": MediumHeader,
-        // "the-carousell": TheCarousell,
-        // "carousel-body": CarouselBody,
+        "the-carousell": TheCarousell,
+        "carousel-body": CarouselBody,
     },
     name: "PastProjects",
 });

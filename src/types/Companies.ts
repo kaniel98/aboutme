@@ -1,6 +1,7 @@
 interface Company {
-    id: number;
-    title: string,
+    no: number;
+    id: string;
+    title: string;
     name: string;
     companyUrl: string;
     timePeriod: string;
