@@ -1,5 +1,5 @@
 <template>
-    <div style="margin-top: 130px" class="black-bg px-4">
+    <div style="margin-top: 120px" class="black-bg px-4">
         <div class="container-xxl">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-7 text-center text-md-start">

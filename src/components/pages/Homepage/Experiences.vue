@@ -3,27 +3,14 @@
         <div class="container-xxl">
             <medium-header :headerText="mediumHeader"></medium-header>
             <div class="row">
-                <div class="col-md-3 col-12">
-                    <ul class="nav" id="myTab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button
-                                class="nav-link me-3 active rounded-0"
-                                id="home-tab"
-                                data-bs-toggle="tab"
-                                data-bs-target="#flex-solver"
-                                type="button"
-                                role="tab"
-                                aria-controls="home"
-                                aria-selected="true"
-                            >
-                                Flex-solver
-                            </button>
-                        </li>
+                <div class="col-12">
+                    <ul class="nav" id="experienceTabs" role="tablist">
+                        <experience-tab v-for="company in companies" :key="company.id" :companyId="company.id" :companyNo="company.no"></experience-tab>
                     </ul>
                 </div>
 
                 <!-- Content -->
-                <div class="col-md-9 col-12 white-text">
+                <div class="col-12 white-text vh-25" id="experienceContent">
                     <div v-for="company in companies" :key="company.id" class="tab-content" id="nav-tabContent">
                         <div :class="'tab-pane fade show ' + activeTab(company.no)" :id="company.id" role="tabpanel" aria-labelledby="list-home-list">
                             <experience-content :company="company"></experience-content>
@@ -40,7 +27,8 @@ import { defineComponent, reactive, toRefs, ref } from "vue";
 
 import MediumHeader from "../../ui/MediumHeader.vue";
 import Company from "../../../types/Companies";
-import ExperienceContent from "./ExperienceContent.vue";
+import ExperienceTab from "./ExperienceTab.vue";
+import ExperienceContent from "./ExperienceTabContent.vue";
 
 export default defineComponent({
     setup() {
@@ -62,11 +50,28 @@ export default defineComponent({
                     "Refactoring of codes to reduce code base & increase efficiency",
                 ],
             },
+            {
+                no: 2,
+                id: "flex-2",
+                title: "BACKEND SOFTWARE DEVELOPER INTERN",
+                name: "FLEX-SOLVER PTE LTD",
+                companyUrl: "https://www.flex-solver.com.sg/",
+                timePeriod: "May 2022 - August 2022",
+                experienceDetails: ["testcontent"],
+            },
+            {
+                no: 3,
+                id: "flex-3",
+                title: "BACKEND SOFTWARE DEVELOPER INTERN",
+                name: "FLEX-SOLVER PTE LTD",
+                companyUrl: "https://www.flex-solver.com.sg/",
+                timePeriod: "May 2022 - August 2022",
+                experienceDetails: ["testcontecddcdcdnt"],
+            },
         ]);
 
         //Checking if a specific tab is active
         const activeTab = (tabNo: number) => {
-            console.log(tabNo);
             if (tabNo === 1) {
                 return "active";
             }
@@ -78,29 +83,18 @@ export default defineComponent({
     components: {
         "medium-header": MediumHeader,
         "experience-content": ExperienceContent,
+        "experience-tab": ExperienceTab,
     },
     name: "MyExperiences",
 });
 </script>
 
 <style scoped>
-.nav-link {
-    background-color: rgba(32, 32, 32, 0.7);
-    color: rgba(222, 222, 222, 0.5);
-    border: none;
-    /* border-left: 3px solid rgb(222, 222, 222, 0.3); */
-    width: 125px;
+#experienceTabs {
+    margin-bottom: 12px;
 }
 
-.nav-link:hover {
-    background-color: rgba(52, 52, 52, 0.7);
-    color: rgba(222, 222, 222, 1);
-}
-
-.nav-link.active {
-    background-color: rgba(52, 52, 52, 0.7);
-    border-color: rgba(52, 52, 52, 0.7);
-    color: rgba(222, 222, 222, 1);
-    border-bottom: 3px solid rgba(222, 222, 222, 1);
-}
+/* #experienceContent{
+    height: 300px
+} */
 </style>
