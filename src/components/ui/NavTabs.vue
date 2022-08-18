@@ -1,16 +1,16 @@
 <template>
     <li class="nav-item" role="presentation">
         <button
-            :class="'nav-link me-1 rounded-0 ' + activeTab(companyNo)"
+            :class="'nav-link me-1 rounded-0 ' + activeTab(tabNo)"
             id="home-tab"
             data-bs-toggle="tab"
-            :data-bs-target="'#' + companyId"
+            :data-bs-target="'#' + tabId"
             type="button"
             role="tab"
             aria-controls="home"
             aria-selected="true"
         >
-            {{ companyName }}
+            {{ tabName }}
         </button>
     </li>
 </template>
@@ -20,18 +20,18 @@ import { defineComponent, computed } from "vue";
 
 export default defineComponent({
     props: {
-        companyId: {
+        tabId: {
             type: String,
             required: true,
         },
-        companyNo: {
+        tabNo: {
             type: Number,
             required: true,
         },
     },
     setup(props) {
-        const companyName = computed(() => {
-            return split(props.companyId);
+        const tabName = computed(() => {
+            return split(props.tabId);
         });
 
         const activeTab = (tabNo: number) => {
@@ -42,17 +42,17 @@ export default defineComponent({
         };
 
         return {
-            companyName,
+            tabName,
             activeTab,
         };
     },
-    name: "ExperienceTab",
+    name: "NavTab",
 });
 
 function split(str: string) {
     return str
         .split(" ")
-        .map((w) => w[0].toUpperCase() + w.substr(1).toLowerCase())
+        .map((w) => w[0].toUpperCase() + w.substr(1))
         .join(" ");
 }
 </script>
@@ -63,7 +63,7 @@ function split(str: string) {
     color: rgba(222, 222, 222, 0.5);
     border: none;
     /* border-left: 3px solid rgb(222, 222, 222, 0.3); */
-    width: 125px;
+    width: 150px;
 }
 
 .nav-link:hover {

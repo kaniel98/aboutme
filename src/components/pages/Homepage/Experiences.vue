@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-12">
                     <ul class="nav" id="experienceTabs" role="tablist">
-                        <experience-tab v-for="company in companies" :key="company.id" :companyId="company.id" :companyNo="company.no"></experience-tab>
+                        <experience-tab v-for="company in companies" :key="company.no" :tabId="company.id" :tabNo="company.no"></experience-tab>
                     </ul>
                 </div>
 
@@ -27,7 +27,7 @@ import { defineComponent, reactive, toRefs, ref } from "vue";
 
 import MediumHeader from "../../ui/MediumHeader.vue";
 import Company from "../../../types/Companies";
-import ExperienceTab from "./ExperienceTab.vue";
+import ExperienceTab from "../../ui/NavTabs.vue";
 import ExperienceContent from "./ExperienceTabContent.vue";
 
 export default defineComponent({
@@ -91,7 +91,7 @@ export default defineComponent({
 
 <style scoped>
 #experienceTabs {
-    margin-bottom: 12px;
+    margin-bottom: 20px;
 }
 
 /* #experienceContent{
