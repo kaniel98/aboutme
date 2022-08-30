@@ -2,46 +2,76 @@
     <div class="row">
         <!-- Carousel -->
         <div class="col-12 col-lg-7">
-            <the-carousel :content="content"></the-carousel>
+            <the-carousel :photos="project.photos" :projectName="project.projectName"></the-carousel>
         </div>
         <!-- Carousel content -->
         <div class="col-12 col-lg-5">
-            <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" v-for="i in content" :key="i" :id="i" role="tabpanel" aria-labelledby="list-home-list" style="color: white">
-                    {{ i }}
-                </div>
-                <!-- <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
-                        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
-                        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div> -->
-            </div>
+            <mini-header :headerText="project.projectName"></mini-header>
+            <div class="body-content white-text">{{ project.projectDescription }}</div>
+            <div class="technology-header">TECHNOLOGIES USED:</div>
+            <div class="technology-content"><b>BACKEND</b>: {{ backend }}</div>
+            <div class="technology-content"><b>FRONTEND</b>: {{ frontend }}</div>
         </div>
     </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, reactive, toRefs } from "vue";
+import { defineComponent, computed } from "vue";
 import TheCarousel from "../../ui/TheCarousel.vue";
 import Project from "../../../types/Projects";
+import MiniHeader from "../../ui/MiniHeader.vue";
 
 export default defineComponent({
     props: {
         project: {
             type: Object as () => Project,
-            required: false,
+            required: true,
         },
     },
     setup(props) {
-        const state = reactive({
-            headerText: "PAST PROJECTS:",
-            content: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        const backend = computed<string>(() => {
+            return props.project.projectTechnology.backend.join(", ");
+        });
+        const frontend = computed<string>(() => {
+            return props.project.projectTechnology.frontend.join(", ");
         });
 
-        return { ...toRefs(state) };
+        return { backend, frontend };
     },
 
     name: "ProjectTabContent",
     components: {
         "the-carousel": TheCarousel,
+        "mini-header": MiniHeader,
     },
 });
 </script>
+
+<style scoped>
+mini-header {
+    font-weight: 200;
+}
+
+.body-content {
+    font-size: 24px;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+}
+
+.technology-header {
+    color: rgba(222, 222, 222, 0.7);
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    font-weight: 300;
+    text-decoration: underline;
+}
+
+.technology-content {
+    color: rgba(222, 222, 222, 0.7);
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    font-weight: 200;
+}
+</style>

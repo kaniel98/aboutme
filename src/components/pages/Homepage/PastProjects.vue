@@ -3,16 +3,20 @@
         <div class="container-xxl">
             <medium-header :headerText="headerText"></medium-header>
             <div class="row">
-                <!-- Used to put tabs for the projects -->
+                <!-- Tabs -->
                 <div class="col-12">
                     <ul class="nav" id="projectTabs" role="tablist">
                         <project-tab v-for="project in projects" :key="project.no" :tabId="project.id" :tabNo="project.no"></project-tab>
                     </ul>
                 </div>
-            </div>
-            <div>
-
-                    <carousel-body :content="content"></carousel-body>
+                <!-- Content -->
+                <div class="col-12 white-text" id="projectContent">
+                    <div class="tab-content" id="nav-tabContent">
+                        <div v-for="project in projects" :key="project.id" :class="'tab-pane fade ' + activeTab(project.no)" :id="project.id" role="tabpanel">
+                            <project-content :project="project"></project-content>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -21,9 +25,10 @@
 <script lang="ts">
 import MediumHeader from "../../ui/MediumHeader.vue";
 import ProjectTab from "../../ui/NavTabs.vue";
-import CarouselBody from "./ProjectTabContent.vue";
+import ProjectTabContent from "./ProjectTabContent.vue";
 import Project from "../../../types/Projects";
-import { defineComponent, reactive, toRefs, ref } from "vue";
+import projectContent from "../Homepage/projects.json";
+import { defineComponent, reactive, toRefs, ref, onMounted } from "vue";
 
 export default defineComponent({
     setup() {
@@ -32,25 +37,20 @@ export default defineComponent({
             content: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
         });
 
-        const projects = ref<Project[]>([
-            {
-                no: 1,
-                id: "HawkerMeetsYou",
-                projectName: "HawkerMeetsYou",
-                projectDescription: "A software engineering module project where we build an online food delivery platform. It primarily focuses on backend development using Docker and using a Microservice Architecture.",
-                projectType: "Software Engineering",
-                projectTechnology: {
-                    frontend: ["HTML", "CSS", "BOOTSTRAP5", "VUE.JS"],
-                    backend: ["PYTHON", "GOLANG", "FLASK", "MYSQL", "DOCKER"]
-                },
-            },
-        ]);
+        const activeTab = ((tabNo: number) => {
+            if (tabNo === 1) {
+                return "show active";
+            }
+            return "";
+        });
 
-        return { ...toRefs(state), projects };
+        const projects = ref<Project[]>(projectContent);
+
+        return { ...toRefs(state), projects, activeTab };
     },
     components: {
         "medium-header": MediumHeader,
-        "carousel-body": CarouselBody,
+        "project-content": ProjectTabContent,
         "project-tab": ProjectTab,
     },
     name: "PastProjects",

@@ -8,6 +8,13 @@ interface Project {
         frontend: Array<string>;
         backend: Array<string>;
     };
+    photos: Array<{
+        photoId: number;
+        photoName: string;
+        photoUrl: string;
+        photoTitle: string;
+        photoDescription: string;
+    }>;
 }
 
 export default Project;

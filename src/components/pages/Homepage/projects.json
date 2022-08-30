@@ -1,0 +1,98 @@
+[
+    {
+        "no": 1,
+        "id": "HawkerMeetsYou",
+        "projectName": "HAWKERMEETSYOU",
+        "projectDescription": "A software engineering module project where we build an online food delivery platform. It primarily focuses on backend development with Docker and Microservice Architecture.",
+        "projectType": "Software Engineering",
+        "projectTechnology": {
+            "frontend": ["HTML", "CSS", "BOOTSTRAP5", "VUE.JS"],
+            "backend": ["PYTHON", "GOLANG", "FLASK", "MYSQL", "DOCKER"]
+        },
+        "photos": [
+            {
+                "photoId": 1,
+                "photoName": "img1.png",
+                "photoUrl": "hawkermeetsyou/img1.png",
+                "photoTitle": "Page 1",
+                "photoDescription": "Placeholder 1"
+            },
+            {
+                "photoId": 2,
+                "photoName": "img2.png",
+                "photoUrl": "hawkermeetsyou/img2.png",
+                "photoTitle": "Page 2",
+                "photoDescription": "Placeholder 2"
+            },
+            {
+                "photoId": 3,
+                "photoName": "img3.png",
+                "photoUrl": "hawkermeetsyou/img3.png",
+                "photoTitle": "Page 3",
+                "photoDescription": "Placeholder 3"
+            },
+            {
+                "photoId": 4,
+                "photoName": "img4.png",
+                "photoUrl": "hawkermeetsyou/img4.png",
+                "photoTitle": "Page 4",
+                "photoDescription": "Placeholder 4"
+            },
+            {
+                "photoId": 5,
+                "photoName": "img5.png",
+                "photoUrl": "hawkermeetsyou/img5.png",
+                "photoTitle": "Page 5",
+                "photoDescription": "Placeholder 5"
+            }
+        ]
+    },
+    {
+        "no": 2,
+        "id": "HawkerMeetsYou2",
+        "projectName": "HAWKERMEETSYOU",
+        "projectDescription": "A software engineering module project where we build an online food delivery platform. It primarily focuses on backend development with Docker and Microservice Architecture.",
+        "projectType": "Software Engineering",
+        "projectTechnology": {
+            "frontend": ["HTML", "CSS", "BOOTSTRAP5", "VUE.JS"],
+            "backend": ["PYTHON", "GOLANG", "FLASK", "MYSQL", "DOCKER"]
+        },
+        "photos": [
+            {
+                "photoId": 1,
+                "photoName": "img1.png",
+                "photoUrl": "hawkermeetsyou/img1.png",
+                "photoTitle": "Page 1",
+                "photoDescription": "Placeholder 1"
+            },
+            {
+                "photoId": 2,
+                "photoName": "img2.png",
+                "photoUrl": "hawkermeetsyou/img2.png",
+                "photoTitle": "Page 2",
+                "photoDescription": "Placeholder 2"
+            },
+            {
+                "photoId": 3,
+                "photoName": "img3.png",
+                "photoUrl": "hawkermeetsyou/img3.png",
+                "photoTitle": "Page 3",
+                "photoDescription": "Placeholder 3"
+            },
+            {
+                "photoId": 4,
+                "photoName": "img4.png",
+                "photoUrl": "hawkermeetsyou/img4.png",
+                "photoTitle": "Page 4",
+                "photoDescription": "Placeholder 4"
+            },
+            {
+                "photoId": 5,
+                "photoName": "img5.png",
+                "photoUrl": "hawkermeetsyou/img5.png",
+                "photoTitle": "Page 5",
+                "photoDescription": "Placeholder 5"
+            }
+        ]
+    }
+]

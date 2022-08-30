@@ -1,53 +1,67 @@
 <template>
-    <div>
-        <vueper-slides 3d fixed-height="300px" arrows-inside bullets-outside>
-            <vueper-slide v-for="i in content" :key="i" :href="'#' + i" :title="i.toString()" />
-        </vueper-slides>
+    <div :id="projectName.toLowerCase()" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-indicators">
+            <button v-for="photo in photos" :key="photo.photoId" type="button" :data-bs-target="dataTarget" :data-bs-slide-to="currentSlide(photo.photoId)" 
+            :class="activeTab(photo.photoId)" aria-current="true" :aria-label="photo.photoName"></button>
+        </div>
+
+        <!-- Actual items -->
+        <div class="carousel-inner">
+            <div v-for="photo in photos" :key="photo.photoId" :class="'carousel-item '+ activeTab(photo.photoId)">
+                <img :src="require('@/assets/projectAssets/' + photo.photoUrl)" class="d-block w-100"/>
+            </div>
+        </div>
+
+        <!-- Left & Right controls -->
+        <button class="carousel-control-prev" type="button" :data-bs-target="dataTarget" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" :data-bs-target="dataTarget" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 </template>
 
 <script lang="ts">
-import { defineComponent} from "vue";
-import { VueperSlides, VueperSlide } from "vueperslides";
-import "vueperslides/dist/vueperslides.css";
+import { defineComponent } from "vue";
 
 export default defineComponent({
     props: {
-        content: {
-            type: Array,
+        projectName: {
+            type: String,
+            required: true,
+        },
+        photos: {
+            type: Object,
             required: true,
         },
     },
-    components: {
-        VueperSlides,
-        VueperSlide,
+
+    setup(props) {
+        // Return the data-bs-target
+        const dataTarget = `#${props.projectName.toLowerCase()}`;
+
+        const activeTab = ((photoId: number) => {
+            if (photoId === 1) {
+                return "active";
+            }
+            return "";
+        });
+
+        const currentSlide = ((photoId: number)=>{
+            return photoId-1
+        })
+
+        function filePath(path: string) {
+            return `@/assets/projectAssets/${path}`;
+            
+        }
+
+        return { dataTarget, activeTab, filePath, currentSlide };
     },
 });
 </script>
 
-<style scoped>
-.vueperslide {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-
-    &__title {
-        font-size: 7em;
-        opacity: 0.6;
-    }
-}
-
-p {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    z-index: 10;
-}
-
-html {
-    font: 12px Tahoma, Geneva, sans-serif;
-}
-* {
-    margin: 0;
-    padding: 0;
-    color: #fff;
-}
-</style>
+<style scoped></style>

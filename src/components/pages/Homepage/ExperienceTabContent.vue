@@ -1,6 +1,6 @@
 <template>
     <div>
-        <mini-header :headerText="company.title" style="font-weight: 100;">
+        <mini-header :headerText="company.title">
             <template v-slot:ExperienceHeader>
                 <a :href="company.companyUrl" target="_blank" rel="noopener noreferrer">@ {{ company.name }}</a>
             </template>

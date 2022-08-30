@@ -11,8 +11,8 @@
 
                 <!-- Content -->
                 <div class="col-12 white-text vh-25" id="experienceContent">
-                    <div v-for="company in companies" :key="company.id" class="tab-content" id="nav-tabContent">
-                        <div :class="'tab-pane fade show ' + activeTab(company.no)" :id="company.id" role="tabpanel" aria-labelledby="list-home-list">
+                    <div class="tab-content" id="nav-tabContent">
+                        <div v-for="company in companies" :key="company.id" :class="'tab-pane fade ' + activeTab(company.no)" :id="company.id" role="tabpanel">
                             <experience-content :company="company"></experience-content>
                         </div>
                     </div>
@@ -73,7 +73,7 @@ export default defineComponent({
         //Checking if a specific tab is active
         const activeTab = (tabNo: number) => {
             if (tabNo === 1) {
-                return "active";
+                return "show active";
             }
             return "";
         };
@@ -93,8 +93,4 @@ export default defineComponent({
 #experienceTabs {
     margin-bottom: 20px;
 }
-
-/* #experienceContent{
-    height: 300px
-} */
 </style>

@@ -27,6 +27,6 @@ export default defineComponent({
     font-size: 16px;
     letter-spacing: 1.5px;
     margin-bottom: 12px;
-    font-weight: 200;
+    font-weight: 300;
 }
 </style>

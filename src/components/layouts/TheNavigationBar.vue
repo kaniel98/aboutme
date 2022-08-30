@@ -62,7 +62,6 @@ export default defineComponent({
         });
 
         onMounted(() => {
-            console.log("mounted");
             window.addEventListener("scroll", onScroll);
         });
 
