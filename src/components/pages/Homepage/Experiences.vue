@@ -50,24 +50,6 @@ export default defineComponent({
                     "Refactoring of codes to reduce code base & increase efficiency",
                 ],
             },
-            {
-                no: 2,
-                id: "flex-2",
-                title: "BACKEND SOFTWARE DEVELOPER INTERN",
-                name: "FLEX-SOLVER PTE LTD",
-                companyUrl: "https://www.flex-solver.com.sg/",
-                timePeriod: "May 2022 - August 2022",
-                experienceDetails: ["testcontent"],
-            },
-            {
-                no: 3,
-                id: "flex-3",
-                title: "BACKEND SOFTWARE DEVELOPER INTERN",
-                name: "FLEX-SOLVER PTE LTD",
-                companyUrl: "https://www.flex-solver.com.sg/",
-                timePeriod: "May 2022 - August 2022",
-                experienceDetails: ["testcontecddcdcdnt"],
-            },
         ]);
 
         //Checking if a specific tab is active
