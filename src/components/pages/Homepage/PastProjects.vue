@@ -28,7 +28,7 @@ import ProjectTab from "../../ui/NavTabs.vue";
 import ProjectTabContent from "./ProjectTabContent.vue";
 import Project from "../../../types/Projects";
 import projectContent from "../Homepage/projects.json";
-import { defineComponent, reactive, toRefs, ref, onMounted } from "vue";
+import { defineComponent, reactive, toRefs, ref } from "vue";
 
 export default defineComponent({
     setup() {
